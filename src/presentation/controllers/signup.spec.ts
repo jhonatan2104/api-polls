@@ -10,6 +10,7 @@ describe('SignUp Controller', () => {
             }
         }
         const httpResponse = sut.handle(httpRequest);
+        expect(httpResponse.body).toEqual(new Error('Messing param: name'));
         expect(httpResponse.statusCode).toBe(400);
     });
 });
